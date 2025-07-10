@@ -2174,19 +2174,19 @@ TypeScript's power lies in its ability to provide static type checking, catching
 
 - **Preferring `unknown` over `any`**: When you absolutely cannot determine the type of a value at compile time, and you're tempted to reach for any, consider using unknown instead. unknown is a type-safe counterpart to any. While a variable of type unknown can hold any value, you must perform type narrowing (e.g., using typeof or instanceof checks, or a type assertion) before you can perform any operations on it. This forces you to handle the unknown type explicitly, preventing accidental runtime errors.
 
-  ```
-  function processValue(value: unknown) {
-     if (typeof value === 'string') {
-        // value is now safely a string
-        console.log(value.toUpperCase());
-     } else if (typeof value === 'number') {
-        // value is now safely a number
-        console.log(value * 2);
-     }
-     // Without narrowing, you cannot access properties or methods on 'value'
-     // console.log(value.someProperty); // Error: Object is of type 'unknown'.
-  }
-  ```
+  |```
+  |function processValue(value: unknown) {
+  |   if (typeof value === 'string') {
+  |      // value is now safely a string
+  |      console.log(value.toUpperCase());
+  |   } else if (typeof value === 'number') {
+  |      // value is now safely a number
+  |      console.log(value * 2);
+  |   }
+  |   // Without narrowing, you cannot access properties or methods on 'value'
+  |   // console.log(value.someProperty); // Error: Object is of type 'unknown'.
+  |}
+  |```
 
 - **Type Assertions (`as Type`) - Use with Caution**: Type assertions tell the TypeScript compiler, \"Trust me, I know what I'm doing; this is definitely of this type.\" While there are legitimate use cases (e.g., when dealing with external libraries that don't have perfect type definitions, or when you have more information than the compiler), they should be used sparingly and with extreme caution.
   - **Bypassing Type Checking**: Like `any`, type assertions bypass TypeScript's safety checks. If your assertion is incorrect, you introduce a runtime error that TypeScript would not have warned you about.
