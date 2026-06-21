@@ -7,3 +7,6 @@
 
 
 [agent.md](https://github.com/agentsmd/agents.md)
+
+
+[ponytail](https://github.com/DietrichGebert/ponytail/blob/main/AGENTS.md)
